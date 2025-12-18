@@ -34,22 +34,13 @@ Model, tek bir kanal yerine QALAS'tan gelen tüm veriyi (5 kanal) girdi olarak a
 Model, 5 farklı kanaldan (T1, T2, PD, T1rho, T2rho) gelen verileri tek bir 4D hacim olarak işler. Bu çok kanallı yapı, dokular arasındaki biyolojik ve sayısal korelasyonun öğrenilmesini sağlar.
 
 ### **Mimari Bileşenleri:**
+* **Giriş (Input):**  boyutlarında Düşük Çözünürlüklü (LR) yamalar.
 
-* 
-**Giriş (Input):**  boyutlarında Düşük Çözünürlüklü (LR) yamalar.
+* **Encoder (Residual U-Net):** MONAI tabanlı 3D Residual Bloklar kullanılarak derin özellik çıkarımı yapılır.
 
+* **Bottleneck:** Verinin en derin ve bağlamsal özelliklerinin yakalandığı katman.
 
-* 
-**Encoder (Residual U-Net):** MONAI tabanlı 3D Residual Bloklar kullanılarak derin özellik çıkarımı yapılır.
-
-
-* 
-**Bottleneck:** Verinin en derin ve bağlamsal özelliklerinin yakalandığı katman.
-
-
-* 
-**Decoder:** `ConvTranspose3d` katmanı ile mekânsal çözünürlük  oranında artırılır.
-
+* **Decoder:** `ConvTranspose3d` katmanı ile mekânsal çözünürlük  oranında artırılır.
 
 * **Çıkış (Output):**  boyutlarında Yüksek Çözünürlüklü (SR) yamalar.
 
@@ -64,16 +55,13 @@ Eğitim süreci, Üretici (Generator) ve Ayırıcı (Discriminator) ağların bi
 
 Modelin başarısı, aşağıdaki bileşenlerin hibrit bir kombinasyonu ile sağlanır:
 
-* 
-**Pixel Loss ():** Görüntünün temel anatomik yapısını ve parlaklık değerlerini korur ().
+* **Pixel Loss ():** Görüntünün temel anatomik yapısını ve parlaklık değerlerini korur ().
 
 
-* 
-**Adversarial Loss:** Çıktının "gerçekçi" görünmesini sağlayarak bulanıklığı giderir ().
+* **Adversarial Loss:** Çıktının "gerçekçi" görünmesini sağlayarak bulanıklığı giderir ().
 
 
-* 
-**Quantitative (Nicel) Loss:** T1 ve T2 haritalarındaki sayısal değerlerin fiziksel doğruluğunu garanti altına alır ().
+* **Quantitative (Nicel) Loss:** T1 ve T2 haritalarındaki sayısal değerlerin fiziksel doğruluğunu garanti altına alır ().
 
 ## 🚀 Kurulum ve Kullanım
 
