@@ -102,7 +102,4 @@ Bu projede kullanılan ana veriler, Shohei Fujita tarafından paylaşılan açı
 
 **Geliştirici:** Esma Elifsu Cerit
 
-**Danışman:** Dr. Öğr. Üyesi Ramin Abbaszadi
-
-**Akademik Dönem:** 2025 Sonbahar - Bilgisayarlı Görü / Yapay Zeka Mühendisliği
 
